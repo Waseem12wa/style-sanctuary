@@ -1,0 +1,120 @@
+[
+    {
+        "id": 1,
+        "name": "Air Velocity Pro",
+        "category": "Running",
+        "price": 189,
+        "originalPrice": 229,
+        "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+        "colors": [
+            "#1a1a1a",
+            "#3b82f6",
+            "#ef4444"
+        ],
+        "isNew": true,
+        "isSale": true,
+        "stock": 3,
+        "description": "Premium running shoes designed for speed and comfort."
+    },
+    {
+        "id": 2,
+        "name": "Urban Flex Jogger",
+        "category": "Lifestyle",
+        "price": 95,
+        "image": "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80",
+        "colors": [
+            "#374151",
+            "#1f2937",
+            "#059669"
+        ],
+        "isNew": true,
+        "description": "Comfortable joggers for everyday wear."
+    },
+    {
+        "id": 3,
+        "name": "Performance Hoodie",
+        "category": "Training",
+        "price": 120,
+        "originalPrice": 150,
+        "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80",
+        "colors": [
+            "#1f2937",
+            "#3b82f6",
+            "#f97316"
+        ],
+        "isSale": true,
+        "description": "Warm and breathable hoodie for your workouts."
+    },
+    {
+        "id": 4,
+        "name": "Stealth Runner X",
+        "category": "Running",
+        "price": 220,
+        "image": "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80",
+        "colors": [
+            "#0a0a0a",
+            "#dc2626",
+            "#fbbf24"
+        ],
+        "isNew": true,
+        "description": "High-tech running shoes for the serious athlete."
+    },
+    {
+        "id": 5,
+        "name": "Elite Training Shorts",
+        "category": "Training",
+        "price": 65,
+        "originalPrice": 85,
+        "image": "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=800&q=80",
+        "colors": [
+            "#1a1a1a",
+            "#1e40af",
+            "#059669"
+        ],
+        "isSale": true,
+        "description": "Lightweight shorts for maximum mobility."
+    },
+    {
+        "id": 6,
+        "name": "Cloud Walker",
+        "category": "Lifestyle",
+        "price": 175,
+        "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80",
+        "colors": [
+            "#fafafa",
+            "#e5e5e5",
+            "#fcd34d"
+        ],
+        "isNew": true,
+        "description": "Walk on clouds with these ultra-cushioned sneakers."
+    },
+    {
+        "id": 7,
+        "name": "Tech Fleece Pants",
+        "category": "Lifestyle",
+        "price": 110,
+        "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80",
+        "colors": [
+            "#374151",
+            "#1f2937",
+            "#7c3aed"
+        ],
+        "description": "Modern fit fleece pants for style and comfort."
+    },
+    {
+        "id": 8,
+        "name": "Apex Court",
+        "category": "Basketball",
+        "price": 195,
+        "originalPrice": 240,
+        "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80",
+        "colors": [
+            "#ef4444",
+            "#1a1a1a",
+            "#3b82f6"
+        ],
+        "isSale": true,
+        "stock": 5,
+        "description": "Dominate the court with these high-performance basketball shoes."
+    }
+]

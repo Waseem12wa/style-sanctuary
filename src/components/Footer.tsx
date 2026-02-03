@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Instagram, Twitter, Youtube, Facebook } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   Shop: ["Men", "Women", "Kids", "Sale", "New Arrivals"],
@@ -30,7 +31,7 @@ export default function Footer() {
               <span className="text-gradient">FLUX</span>
             </motion.a>
             <p className="text-muted-foreground mt-4 text-sm max-w-xs">
-              Premium athletic wear for those who push boundaries. 
+              Premium athletic wear for those who push boundaries.
               Performance engineered, style perfected.
             </p>
             <div className="flex gap-4 mt-6">
@@ -56,12 +57,17 @@ export default function Footer() {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link}>
-                    <a
-                      href="#"
+                    <Link
+                      to={
+                        link === "About Us" ? "/about" :
+                          link === "Contact Us" ? "/contact" :
+                            link === "FAQs" ? "/blog" : // Reuse blog for FAQs simulation
+                              "/shop"
+                      }
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

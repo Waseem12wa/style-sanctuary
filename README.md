@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
+# Style Sanctuary - Modern E-Commerce Platform
 
-## Project info
+A production-ready, full-stack e-commerce solution built for Digital Marketing and Brand Development.
+This project features a modern React frontend with a conversion-focused design and a Node/Express backend for robust data handling.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+### Brand & Marketing
+- **Modern Aesthetic**: "Dark Athletic" visually engaging design with glassmorphism effects.
+- **Conversion Optimization**: High-contrast CTAs, Trust Badges, and simplified Checkout.
+- **Content Marketing**: Integrated Blog and Newsletter subscription with hooks.
+- **SEO Ready**: Optimized meta tags and Open Graph data for social sharing.
 
-There are several ways of editing your application.
+### Core Functionality
+- **Product Management**: Dynamic shop with category filtering and price ranges.
+- **Cart System**: Fully functional cart with quantity management.
+- **Checkout Process**: Multi-step checkout flow (Shipping -> Payment -> Success).
+- **User Dashboard**: Protected area for order history and profile management.
 
-**Use Lovable**
+### Authentication
+- Secure Signup & Login (JWT).
+- Email Verification flow.
+- Forgot Password flow.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React, TypeScript, Vite, Tailwind CSS, Framer Motion, Shadcn UI.
+- **Backend**: Node.js, Express, JWT, Bcrypt.
+- **Data**: JSON-based local persistence (Simulated Database for portability).
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
+- Node.js installed.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+1.  **Install Frontend Dependencies**:
+    ```bash
+    npm install
+    ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2.  **Install Backend Dependencies**:
+    ```bash
+    cd backend
+    npm install
+    cd ..
+    ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Running the App
 
-# Step 3: Install the necessary dependencies.
-npm i
+You need to run both the Client and Server.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1.  **Start Backend**:
+    ```bash
+    cd backend
+    npm start
+    ```
+    (Runs on Port 5000)
 
-**Edit a file directly in GitHub**
+2.  **Start Frontend**:
+    ```bash
+    npm run dev
+    ```
+    (Runs on Port 8080)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Project Structure
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- `/src`: Frontend Source Code
+  - `/pages`: Application Routes (Home, Shop, Auth, etc.)
+  - `/components`: Reusable UI components.
+- `/backend`: Backend Source Code
+  - `/routes`: API Endpoints for Auth and Products.
+  - `/data`: JSON data files for persistence.
