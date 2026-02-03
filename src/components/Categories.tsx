@@ -24,7 +24,7 @@ const categories = [
 
 export default function Categories() {
   return (
-    <section id="categories" className="py-24 bg-secondary/30">
+    <section id="categories" className="py-24 bg-secondary/30 scroll-mt-24">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div

@@ -97,14 +97,11 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
         </motion.button>
 
         {/* Quick Actions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
-          transition={{ duration: 0.3 }}
-          className="absolute bottom-4 left-4 right-4 flex gap-2"
+        <div
+          className="absolute bottom-4 left-4 right-4 flex gap-2 transition-all duration-300 opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0"
         >
           <Button
-            className="flex-1 btn-primary h-12 rounded-lg font-semibold"
+            className="flex-1 btn-primary h-12 rounded-lg font-semibold shadow-lg"
             onClick={handleAddToCart}
           >
             <ShoppingBag className="w-4 h-4 mr-2" />
@@ -113,11 +110,11 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           <Button
             variant="outline"
             size="icon"
-            className="h-12 w-12 rounded-lg bg-background/80 backdrop-blur-sm border-border"
+            className="h-12 w-12 rounded-lg bg-background/80 backdrop-blur-sm border-border shadow-lg"
           >
             <Eye className="w-4 h-4" />
           </Button>
-        </motion.div>
+        </div>
       </div>
 
       {/* Product Info */}
@@ -140,8 +137,8 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               key={color}
               onClick={() => setSelectedColor(color)}
               className={`w-5 h-5 rounded-full border-2 transition-all ${selectedColor === color
-                  ? "border-primary scale-110"
-                  : "border-transparent"
+                ? "border-primary scale-110"
+                : "border-transparent"
                 }`}
               style={{ backgroundColor: color }}
             />
