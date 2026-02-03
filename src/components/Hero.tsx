@@ -36,18 +36,6 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/80 backdrop-blur-sm border border-border mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-sm font-medium text-foreground">
-              New Collection 2025 — AI Generated Series
-            </span>
-          </motion.div>
 
           {/* Headline */}
           <motion.h1
@@ -79,10 +67,10 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button className="btn-primary h-14 px-8 text-base font-semibold rounded-full group" asChild>
-              <Link to="/shop">
+              <a href="#categories">
                 Shop Collection
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
             </Button>
           </motion.div>
 
