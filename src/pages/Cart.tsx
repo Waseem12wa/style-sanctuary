@@ -1,49 +1,14 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Trash2, Plus, Minus, ArrowRight } from "lucide-react";
-
-const initialCart = [
-    {
-        id: 1,
-        name: "Air Velocity Pro",
-        price: 189,
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
-        color: "#1a1a1a",
-        size: "US 10",
-        quantity: 1,
-    },
-    {
-        id: 3,
-        name: "Performance Hoodie",
-        price: 120,
-        image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80",
-        color: "#1f2937",
-        size: "L",
-        quantity: 2,
-    },
-];
+import { useCart } from "@/contexts/CartContext";
 
 export default function Cart() {
-    const [cart, setCart] = useState(initialCart);
+    const { cart, updateQuantity, removeFromCart, subtotal } = useCart();
 
-    const updateQuantity = (id: number, delta: number) => {
-        setCart(prev => prev.map(item => {
-            if (item.id === id) {
-                return { ...item, quantity: Math.max(1, item.quantity + delta) };
-            }
-            return item;
-        }));
-    };
-
-    const removeItem = (id: number) => {
-        setCart(prev => prev.filter(item => item.id !== id));
-    };
-
-    const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
     const shipping = 10;
     const total = subtotal + shipping;
 
@@ -84,7 +49,7 @@ export default function Cart() {
                                                 <span className="text-sm font-medium w-4 text-center">{item.quantity}</span>
                                                 <button onClick={() => updateQuantity(item.id, 1)} className="p-1 hover:text-primary"><Plus className="w-4 h-4" /></button>
                                             </div>
-                                            <button onClick={() => removeItem(item.id)} className="text-destructive hover:text-destructive/80 p-2">
+                                            <button onClick={() => removeFromCart(item.id)} className="text-destructive hover:text-destructive/80 p-2">
                                                 <Trash2 className="w-4 h-4" />
                                             </button>
                                         </div>

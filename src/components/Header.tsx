@@ -12,10 +12,12 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+import { useCart } from "@/contexts/CartContext";
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
-  const [cartCount] = useState(3);
+  const { cartCount } = useCart();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border transition-colors duration-300">

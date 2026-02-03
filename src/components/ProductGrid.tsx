@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import ProductCard, { Product } from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -106,9 +107,11 @@ export default function ProductGrid() {
               Discover our most popular styles loved by athletes and style enthusiasts worldwide.
             </p>
           </div>
-          <Button variant="outline" className="rounded-full group w-fit">
-            View All Products
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <Button variant="outline" className="rounded-full group w-fit" asChild>
+            <Link to="/shop">
+              View All Products
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </Button>
         </motion.div>
 

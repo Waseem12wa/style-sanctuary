@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Heart, ShoppingBag, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/contexts/CartContext";
 
 export interface Product {
   id: string;
@@ -26,6 +27,18 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      color: selectedColor,
+      size: "M", // Default size for quick add
+    });
+  };
 
   const discount = product.originalPrice
     ? Math.round((1 - product.price / product.originalPrice) * 100)
@@ -78,9 +91,8 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center transition-colors hover:bg-background"
         >
           <Heart
-            className={`w-5 h-5 transition-colors ${
-              isWishlisted ? "fill-accent text-accent" : "text-foreground"
-            }`}
+            className={`w-5 h-5 transition-colors ${isWishlisted ? "fill-accent text-accent" : "text-foreground"
+              }`}
           />
         </motion.button>
 
@@ -91,7 +103,10 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           transition={{ duration: 0.3 }}
           className="absolute bottom-4 left-4 right-4 flex gap-2"
         >
-          <Button className="flex-1 btn-primary h-12 rounded-lg font-semibold">
+          <Button
+            className="flex-1 btn-primary h-12 rounded-lg font-semibold"
+            onClick={handleAddToCart}
+          >
             <ShoppingBag className="w-4 h-4 mr-2" />
             Add to Cart
           </Button>
@@ -124,11 +139,10 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
             <button
               key={color}
               onClick={() => setSelectedColor(color)}
-              className={`w-5 h-5 rounded-full border-2 transition-all ${
-                selectedColor === color
+              className={`w-5 h-5 rounded-full border-2 transition-all ${selectedColor === color
                   ? "border-primary scale-110"
                   : "border-transparent"
-              }`}
+                }`}
               style={{ backgroundColor: color }}
             />
           ))}
