@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Search, Menu, X, User, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/mode-toggle";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Shop", href: "/shop", submenu: ["Men", "Women", "Kids", "New Arrivals"] },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -80,7 +80,6 @@ export default function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-2 md:gap-4">
-            <ModeToggle />
             <Button variant="ghost" size="icon" className="hidden md:flex">
               <Search className="w-5 h-5" />
             </Button>

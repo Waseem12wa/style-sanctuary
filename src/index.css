@@ -44,9 +44,7 @@
     /* Custom E-commerce tokens */
     --gradient-hero: linear-gradient(135deg, hsl(217 91% 60% / 0.3), hsl(280 80% 50% / 0.2), hsl(24 95% 53% / 0.15));
     --gradient-card: linear-gradient(180deg, hsl(0 0% 10%), hsl(0 0% 7%));
-    --gradient-cta: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 50%));
-    --gradient-accent: linear-gradient(135deg, hsl(24 95% 53%), hsl(24 95% 45%));
-    
+
     --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.5);
     --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
     --shadow-product: 0 8px 32px -8px hsl(0 0% 0% / 0.6);
@@ -76,7 +74,12 @@
     font-family: var(--font-body);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
   }
 }
@@ -128,11 +131,25 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px hsl(217 91% 60% / 0.3); }
-  50% { box-shadow: 0 0 40px hsl(217 91% 60% / 0.5); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px hsl(217 91% 60% / 0.5);
+  }
 }
