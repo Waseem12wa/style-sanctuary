@@ -1,4 +1,4 @@
-import Link from "@/components/NavLink";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
@@ -65,7 +65,7 @@ export default function Blog() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {posts.map((post) => (
-                        <Link key={post.id} href={`/blog/${post.slug}`}>
+                        <Link key={post.id} to={`/blog/${post.slug}`} className="no-underline">
                             <article className="group cursor-pointer">
                                 <div className="aspect-[4/3] rounded-xl overflow-hidden mb-4 relative">
                                     <img

@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
-import Link from "@/components/NavLink";
+import { Link } from "react-router-dom";
 
 export default function Accessorizing() {
     return (
@@ -120,8 +120,8 @@ export default function Accessorizing() {
                 </article>
 
                 <div className="mt-12 pt-8 border-t border-border">
-                    <Link href="/blog">
-                        <span className="text-accent hover:text-primary transition-colors">← Back to Blog</span>
+                    <Link to="/blog" className="text-accent hover:text-primary transition-colors">
+                        ← Back to Blog
                     </Link>
                 </div>
             </main>
