@@ -17,6 +17,11 @@ import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import SustainableWardrobe from "./pages/BlogPosts/SustainableWardrobe";
+import CapsuleWardrobe from "./pages/BlogPosts/CapsuleWardrobe";
+import FashionTrends2026 from "./pages/BlogPosts/FashionTrends2026";
+import Accessorizing from "./pages/BlogPosts/Accessorizing";
+import PersonalStyle from "./pages/BlogPosts/PersonalStyle";
 import { ThemeProvider } from "@/components/theme-provider";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { CartProvider } from "@/contexts/CartContext";
@@ -48,6 +53,13 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/blog" element={<Blog />} />
+              
+              {/* Blog Post Routes */}
+              <Route path="/blog/sustainable-wardrobe-guide" element={<SustainableWardrobe />} />
+              <Route path="/blog/capsule-wardrobe-essentials" element={<CapsuleWardrobe />} />
+              <Route path="/blog/fashion-trends-2026" element={<FashionTrends2026 />} />
+              <Route path="/blog/art-of-accessorizing" element={<Accessorizing />} />
+              <Route path="/blog/personal-style-journey" element={<PersonalStyle />} />
             </Route>
 
             <Route path="*" element={<NotFound />} />
