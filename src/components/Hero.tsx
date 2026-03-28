@@ -44,8 +44,8 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
       {/* Main Carousel */}
-      <div className="w-full flex-1 flex items-center justify-center relative overflow-hidden bg-black py-8 md:py-12">
-        <div className="w-full h-[400px] md:h-[500px] relative flex items-center justify-center bg-gray-900 rounded-lg px-4 md:px-8">
+      <div className="w-full flex-1 flex items-center justify-center relative overflow-hidden bg-black py-6 md:py-8">
+          <div className="w-full h-[500px] md:h-[650px] relative flex items-center justify-center bg-gray-900">
           {/* Image Display */}
           <motion.div
             key={currentIndex}
@@ -53,12 +53,12 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute inset-0 w-full h-full flex items-center justify-center p-4 md:p-6"
+            className="absolute inset-0 w-full h-full"
           >
             <img
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover object-center"
             />
           </motion.div>
 
