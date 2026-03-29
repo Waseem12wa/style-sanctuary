@@ -8,14 +8,16 @@ import image3 from "@/assets/image3.jpeg";
 import image4 from "@/assets/image4.jpeg";
 import image5 from "@/assets/image5.jpeg";
 import image6 from "@/assets/image6.jpeg";
+import image7 from "@/assets/image7.jpeg";
 
 const images = [
-  { src: image1, alt: "Combo Deals", description: "Ultimate Bundle Offers" },
-  { src: image2, alt: "Custom Tees", description: "Customize Your Style" },
-  { src: image3, alt: "Neon Vibes", description: "Urban Streetwear" },
-  { src: image4, alt: "Premium Range", description: "Elevate Your Wardrobe" },
-  { src: image5, alt: "Packaging", description: "Choose Your Energy" },
-  { src: image6, alt: "Coming Soon", description: "Premium Collection" },
+  { src: image1, alt: "Combo Deals", description: "Ultimate Bundle Offers", fit: "object-cover", scale: "scale-100" },
+  { src: image2, alt: "Custom Tees", description: "Customize Your Style", fit: "object-cover", scale: "scale-100" },
+  { src: image3, alt: "Neon Vibes", description: "Urban Streetwear", fit: "object-contain", scale: "scale-95" },
+  { src: image4, alt: "Premium Range", description: "Elevate Your Wardrobe", fit: "object-contain", scale: "scale-95" },
+  { src: image5, alt: "Packaging", description: "Choose Your Energy", fit: "object-contain", scale: "scale-95" },
+  { src: image6, alt: "Coming Soon", description: "Premium Collection", fit: "object-contain", scale: "scale-95" },
+  { src: image7, alt: "Elevate Your Style", description: "Curated Three-Piece Ensemble", fit: "object-contain", scale: "scale-95" },
 ];
 
 export default function Hero() {
@@ -58,7 +60,7 @@ export default function Hero() {
             <img
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}
-              className="w-full h-full object-cover object-center"
+              className={`w-full h-full object-center transition-transform duration-500 ${images[currentIndex].fit} ${images[currentIndex].scale}`}
             />
           </motion.div>
 
