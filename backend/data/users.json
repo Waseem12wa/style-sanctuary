@@ -5,5 +5,12 @@
     "email": "zwaseem298@gmail.com",
     "password": "$2a$10$mIUWS0LSZCRDZMhW/cpqOepOBk6Uu56BUO.kUBmaniKV2BPY6m2WW",
     "verified": false
+  },
+  {
+    "id": 1777011457545,
+    "name": "Waseem Zahid",
+    "email": "zwaseem29@gmail.com",
+    "password": "$2a$10$VFREilSX7KI3Ie8zJEISM.LGys/tY2UdjVIWdu/biN7hyiXS.gvoG",
+    "verified": false
   }
 ]

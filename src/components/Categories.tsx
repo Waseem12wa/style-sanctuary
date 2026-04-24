@@ -1,30 +1,33 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import image3 from "@/assets/image3.jpeg";
+import image5 from "@/assets/image5.jpeg";
+import carousel1 from "@/assets/carousel1.jpeg";
 
 const categories = [
   {
-    name: "Sneakers",
-    description: "Performance meets style",
-    image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&q=80",
+    name: "Streetwear",
+    description: "Bold everyday layers",
+    image: image3,
     count: "120+ styles",
   },
   {
-    name: "Joggers",
-    description: "Ultimate comfort",
-    image: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=800&q=80",
+    name: "Packaging",
+    description: "Gift-ready presentation",
+    image: image5,
     count: "85+ styles",
   },
   {
-    name: "Hoodies",
-    description: "Street-ready warmth",
-    image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80",
+    name: "Mom & Me",
+    description: "Matching celebration looks",
+    image: carousel1,
     count: "60+ styles",
   },
 ];
 
 export default function Categories() {
   return (
-    <section id="categories" className="py-24 bg-secondary/30 scroll-mt-24">
+    <section id="categories" className="py-24 bg-secondary/30 scroll-mt-28">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -52,7 +55,7 @@ export default function Categories() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
-              className="group relative aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer"
+              className="group relative aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer card-product"
             >
               {/* Image */}
               <img

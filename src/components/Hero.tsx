@@ -9,15 +9,19 @@ import image4 from "@/assets/image4.jpeg";
 import image5 from "@/assets/image5.jpeg";
 import image6 from "@/assets/image6.jpeg";
 import image7 from "@/assets/image7.jpeg";
+import carousel1 from "@/assets/carousel1.jpeg";
+import carousel2 from "@/assets/carousel2.jpeg";
 
 const images = [
   { src: image1, alt: "Combo Deals", description: "Ultimate Bundle Offers", fit: "object-cover", scale: "scale-100" },
   { src: image2, alt: "Custom Tees", description: "Customize Your Style", fit: "object-cover", scale: "scale-100" },
-  { src: image3, alt: "Neon Vibes", description: "Urban Streetwear", fit: "object-contain", scale: "scale-95" },
-  { src: image4, alt: "Premium Range", description: "Elevate Your Wardrobe", fit: "object-contain", scale: "scale-95" },
-  { src: image5, alt: "Packaging", description: "Choose Your Energy", fit: "object-contain", scale: "scale-95" },
-  { src: image6, alt: "Coming Soon", description: "Premium Collection", fit: "object-contain", scale: "scale-95" },
-  { src: image7, alt: "Elevate Your Style", description: "Curated Three-Piece Ensemble", fit: "object-contain", scale: "scale-95" },
+  { src: image3, alt: "Neon Vibes", description: "Urban Streetwear", fit: "object-cover", scale: "scale-100" },
+  { src: image4, alt: "Premium Range", description: "Elevate Your Wardrobe", fit: "object-cover", scale: "scale-100" },
+  { src: image5, alt: "Packaging", description: "Choose Your Energy", fit: "object-cover", scale: "scale-100" },
+  { src: image6, alt: "Coming Soon", description: "Premium Collection", fit: "object-cover", scale: "scale-100" },
+  { src: image7, alt: "Elevate Your Style", description: "Curated Three-Piece Ensemble", fit: "object-cover", scale: "scale-100" },
+  { src: carousel1, alt: "Mother's Day Twin With Mom", description: "This Mother's Day - Twin with Mom", fit: "object-cover", scale: "scale-100" },
+  { src: carousel2, alt: "Mother's Day Celebrate Mom", description: "Celebrate Mom in Style", fit: "object-cover", scale: "scale-100" },
 ];
 
 export default function Hero() {
@@ -44,10 +48,10 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 md:pt-32">
       {/* Main Carousel */}
-      <div className="w-full flex-1 flex items-center justify-center relative overflow-hidden bg-black py-6 md:py-8">
-          <div className="w-full h-[500px] md:h-[650px] relative flex items-center justify-center bg-gray-900">
+        <div className="w-full flex-1 flex items-center justify-center relative overflow-hidden bg-black py-0">
+          <div className="w-full h-[320px] sm:h-[420px] md:h-[560px] lg:h-[640px] xl:h-[768px] relative flex items-center justify-center bg-gray-900">
           {/* Image Display */}
           <motion.div
             key={currentIndex}
@@ -60,7 +64,7 @@ export default function Hero() {
             <img
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}
-              className={`w-full h-full object-center transition-transform duration-500 ${images[currentIndex].fit} ${images[currentIndex].scale}`}
+              className="w-full h-full object-cover object-center transition-transform duration-500"
             />
           </motion.div>
 

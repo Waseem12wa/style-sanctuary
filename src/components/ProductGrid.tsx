@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import ProductCard, { Product } from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import image1 from "@/assets/image1.jpeg";
+import image2 from "@/assets/image2.jpeg";
+import image3 from "@/assets/image3.jpeg";
+import image4 from "@/assets/image4.jpeg";
+import image5 from "@/assets/image5.jpeg";
+import image6 from "@/assets/image6.jpeg";
+import image7 from "@/assets/image7.jpeg";
+import carousel2 from "@/assets/carousel2.jpeg";
 
 const products: Product[] = [
   {
@@ -11,7 +19,7 @@ const products: Product[] = [
     category: "Running",
     price: 189,
     originalPrice: 229,
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+    image: image1,
     colors: ["#1a1a1a", "#3b82f6", "#ef4444"],
     isNew: true,
     isSale: true,
@@ -22,7 +30,7 @@ const products: Product[] = [
     name: "Urban Flex Jogger",
     category: "Lifestyle",
     price: 95,
-    image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80",
+    image: image2,
     colors: ["#374151", "#1f2937", "#059669"],
     isNew: true,
   },
@@ -32,7 +40,7 @@ const products: Product[] = [
     category: "Training",
     price: 120,
     originalPrice: 150,
-    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80",
+    image: image3,
     colors: ["#1f2937", "#3b82f6", "#f97316"],
     isSale: true,
   },
@@ -41,7 +49,7 @@ const products: Product[] = [
     name: "Stealth Runner X",
     category: "Running",
     price: 220,
-    image: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80",
+    image: image4,
     colors: ["#0a0a0a", "#dc2626", "#fbbf24"],
     isNew: true,
   },
@@ -51,7 +59,7 @@ const products: Product[] = [
     category: "Training",
     price: 65,
     originalPrice: 85,
-    image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=800&q=80",
+    image: image5,
     colors: ["#1a1a1a", "#1e40af", "#059669"],
     isSale: true,
   },
@@ -60,7 +68,7 @@ const products: Product[] = [
     name: "Cloud Walker",
     category: "Lifestyle",
     price: 175,
-    image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80",
+    image: image6,
     colors: ["#fafafa", "#e5e5e5", "#fcd34d"],
     isNew: true,
   },
@@ -69,7 +77,7 @@ const products: Product[] = [
     name: "Tech Fleece Pants",
     category: "Lifestyle",
     price: 110,
-    image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80",
+    image: image7,
     colors: ["#374151", "#1f2937", "#7c3aed"],
   },
   {
@@ -78,7 +86,7 @@ const products: Product[] = [
     category: "Basketball",
     price: 195,
     originalPrice: 240,
-    image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80",
+    image: carousel2,
     colors: ["#ef4444", "#1a1a1a", "#3b82f6"],
     isSale: true,
     stock: 5,

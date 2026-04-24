@@ -20,9 +20,10 @@ export default function Header() {
   const { cartCount } = useCart();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border transition-colors duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border transition-colors duration-300">
+      <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-primary/10 via-transparent to-transparent pointer-events-none" />
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="relative flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/">
             <motion.div
@@ -115,6 +116,18 @@ export default function Header() {
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
+          </div>
+        </div>
+
+        <div className="relative mt-1 md:mt-2 h-10 md:h-11 border-t border-border/50 flex items-center justify-center overflow-hidden rounded-sm">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/35 via-primary/20 to-accent/25" />
+          <div className="absolute inset-0 bg-card/55" />
+          <div className="relative flex items-center gap-3 md:gap-6 text-[11px] md:text-xs font-semibold uppercase tracking-wide text-foreground px-2 text-center">
+            <span>Free Delivery</span>
+            <span className="text-muted-foreground">|</span>
+            <span>10% Off First Order</span>
+            <span className="hidden md:inline text-muted-foreground">|</span>
+            <span className="hidden md:inline">Limited Time Offers</span>
           </div>
         </div>
       </div>
