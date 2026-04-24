@@ -148,9 +148,9 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="relative mt-1 md:mt-2 h-12 md:h-14 border-t border-border/50 flex items-center justify-center overflow-hidden rounded-sm">
+        <div className="relative mt-1 md:mt-2 h-9 md:h-10 border-t border-border/50 flex items-center justify-center overflow-hidden rounded-sm">
           <div className="absolute inset-0 bg-primary" />
-          <div className="relative flex items-center gap-3 md:gap-8 text-xs md:text-sm font-semibold uppercase tracking-wide text-primary-foreground px-2 text-center">
+          <div className="relative flex items-center gap-3 md:gap-6 text-[11px] md:text-xs font-semibold uppercase tracking-wide text-primary-foreground px-2 text-center">
             <span>Free Delivery</span>
             <span className="text-primary-foreground/70">|</span>
             <span>10% Off First Order</span>
