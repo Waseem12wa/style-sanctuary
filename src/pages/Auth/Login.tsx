@@ -30,6 +30,8 @@ export default function Login() {
                 toast.success("Logged in successfully!");
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("user", JSON.stringify(data.user));
+                localStorage.setItem("showStyleOffer", "1");
+                localStorage.setItem("styleOfferEmail", email);
                 navigate("/dashboard");
             } else {
                 toast.error(data.message || "Login failed");

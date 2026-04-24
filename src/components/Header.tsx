@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Search, Menu, X, User, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { createPortal } from "react-dom";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -17,7 +19,34 @@ import { useCart } from "@/contexts/CartContext";
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [showStyleOffer, setShowStyleOffer] = useState(false);
+  const [offerEmail, setOfferEmail] = useState("");
+  const [offerSubmitted, setOfferSubmitted] = useState(false);
   const { cartCount } = useCart();
+
+  useEffect(() => {
+    const shouldShowOffer = localStorage.getItem("showStyleOffer") === "1";
+    const savedEmail = localStorage.getItem("styleOfferEmail") || "";
+    const alreadyClaimed = localStorage.getItem("style360Claimed") === "1";
+
+    setOfferEmail(savedEmail);
+    setShowStyleOffer(shouldShowOffer && !alreadyClaimed);
+  }, []);
+
+  const handleOfferSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!offerEmail.trim()) return;
+
+    localStorage.setItem("styleOfferEmail", offerEmail.trim());
+    localStorage.setItem("style360Claimed", "1");
+    localStorage.removeItem("showStyleOffer");
+    setOfferSubmitted(true);
+  };
+
+  const closeOffer = () => {
+    localStorage.removeItem("showStyleOffer");
+    setShowStyleOffer(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border transition-colors duration-300">
@@ -119,17 +148,17 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="relative mt-1 md:mt-2 h-10 md:h-11 border-t border-border/50 flex items-center justify-center overflow-hidden rounded-sm">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/35 via-primary/20 to-accent/25" />
-          <div className="absolute inset-0 bg-card/55" />
-          <div className="relative flex items-center gap-3 md:gap-6 text-[11px] md:text-xs font-semibold uppercase tracking-wide text-foreground px-2 text-center">
+        <div className="relative mt-1 md:mt-2 h-12 md:h-14 border-t border-border/50 flex items-center justify-center overflow-hidden rounded-sm">
+          <div className="absolute inset-0 bg-primary" />
+          <div className="relative flex items-center gap-3 md:gap-8 text-xs md:text-sm font-semibold uppercase tracking-wide text-primary-foreground px-2 text-center">
             <span>Free Delivery</span>
-            <span className="text-muted-foreground">|</span>
+            <span className="text-primary-foreground/70">|</span>
             <span>10% Off First Order</span>
-            <span className="hidden md:inline text-muted-foreground">|</span>
+            <span className="hidden md:inline text-primary-foreground/70">|</span>
             <span className="hidden md:inline">Limited Time Offers</span>
           </div>
         </div>
+
       </div>
 
       {/* Mobile Menu */}
@@ -162,6 +191,83 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {typeof window !== "undefined" &&
+        createPortal(
+          <AnimatePresence>
+            {showStyleOffer && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[100] bg-slate-900/55 backdrop-blur-sm flex items-center justify-center p-4"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 24, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 24, scale: 0.96 }}
+                  transition={{ duration: 0.25 }}
+                  className="relative w-full max-w-2xl rounded-2xl border border-sky-300/35 bg-gradient-to-br from-blue-500/35 via-indigo-500/30 to-orange-400/35 p-5 md:p-7 shadow-2xl"
+                >
+                  <div className="absolute inset-0 rounded-2xl bg-card/70" />
+                  <button
+                    onClick={closeOffer}
+                    className="absolute right-3 top-3 text-slate-300 hover:text-white z-10"
+                    aria-label="Close offer popup"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+
+                  <div className="relative z-10">
+                    {!offerSubmitted ? (
+                      <>
+                        <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-sky-300 mb-2">
+                          Exclusive Welcome Offer
+                        </p>
+                        <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
+                          Get 10% Off Your First Order
+                        </h3>
+                        <p className="text-sm md:text-base text-slate-200 mb-5">
+                          Enter your email and use code <span className="text-sky-300 font-bold">STYLE_360</span> at checkout.
+                        </p>
+
+                        <form onSubmit={handleOfferSubmit} className="flex flex-col sm:flex-row gap-3">
+                          <Input
+                            type="email"
+                            value={offerEmail}
+                            onChange={(e) => setOfferEmail(e.target.value)}
+                            placeholder="Enter your email"
+                            className="h-11 bg-slate-950/80 border-sky-400/45 text-white placeholder:text-slate-400"
+                            required
+                          />
+                          <Button type="submit" className="h-11 px-5 btn-primary whitespace-nowrap">
+                            Claim 10% Off
+                          </Button>
+                        </form>
+                      </>
+                    ) : (
+                      <div>
+                        <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-sky-300 mb-2">
+                          Offer Activated
+                        </p>
+                        <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
+                          Your Promo Code Is Ready
+                        </h3>
+                        <p className="text-sm md:text-base text-slate-200 mb-4">
+                          Use this code at checkout to get your 10% discount.
+                        </p>
+                        <div className="inline-flex items-center rounded-lg border border-sky-300/40 bg-sky-500/20 px-4 py-2">
+                          <span className="text-lg font-bold tracking-widest text-sky-200">STYLE_360</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body
+        )}
     </header>
   );
 }
