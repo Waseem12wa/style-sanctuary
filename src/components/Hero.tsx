@@ -48,7 +48,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 md:pt-32">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Main Carousel */}
         <div className="w-full flex-1 flex items-center justify-center relative overflow-hidden bg-black py-0">
           <div className="w-full h-[320px] sm:h-[420px] md:h-[560px] lg:h-[640px] xl:h-[768px] relative flex items-center justify-center bg-gray-900">

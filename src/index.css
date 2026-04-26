@@ -76,6 +76,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
+    @apply pt-28 md:pt-32;
   }
 
   h1,
